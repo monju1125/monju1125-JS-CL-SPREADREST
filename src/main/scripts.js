@@ -17,14 +17,17 @@ let sumElement = document.getElementById("sum");
 // TODO: Use the spread/rest operator so the function below properly invokes the renderEmployee() function.
 function submitEmployee() {
     let employeeProfile = ['John', 'Smith', '89,000'];
-    renderEmployee(  );
+    renderEmployee(...employeeProfile);
 }
 
 
 // TODO: Refactor the function below to take in any amount of numbers and render the sum on the page.
-function sum(  ) {
+function sum( ...numbers ) {
     let sumNumbers = 0;
 
+    for(let number of numbers ){
+        sumNumbers += number;
+    }
 
     sumElement.innerText = sumNumbers;
 }
